@@ -1,0 +1,36 @@
+Instruction Guide: Creating a Local Pull Request and Merging It to a Remote Repository
+
+Note: This guide maximizes the use of GitBash to implement the desired output.
+
+1. Cloning the Repository
+In your GitHub project, locate the clone URL in the branch you want to contribute to. You can find it by clicking the code button.
+In this guide, we will use the desktop as our destination for cloning. In your GitBash terminal, type:
+   cd desktop  // to set our destination folder
+   git clone 'clone-url'  // this will clone the selected branch from GitHub to your desktop
+
+2. Switching to the New Branch
+After cloning, switch from the main branch to your destination branch:
+   cd 'local repository directory'  // this will allow us to enter the cloned repo
+   git branch  // this will display the available branches in your repository
+   git branch 'new_branch'  // this will create a new branch of your desired name
+   git branch  // just to make sure and check if the new branch is created (optional)
+   git switch 'new_branch'  // this will select the new branch
+   git branch  // just to make sure if the branch is successfully switched; it will be highlighted
+
+3. Adding Files
+Make sure to add your files in the local folder created after cloning. If the files are already in the folder, proceed to step 4.
+
+4. Updating Your Local Branch
+Update your current local branch with the latest changes from the `new_branch` in the remote repository:
+   git pull origin new_branch  // used to fetch and merge changes from a remote repository branch into your current local branch
+   git status  // used to display the state of the working directory; this will display the files available in the cloned folder
+   git add .  // used to stage all the changes in the current directory and its subdirectories, preparing them for the next commit
+   git status  // just to make sure and see if the files were added
+
+5. Committing Your Changes
+Commit your changes:
+   git commit -m 'commit_description'  // used to create a commit with a message that describes the changes being committed
+   git push -u origin 'new_branch'  // used to push a local branch to the remote repository and set it up to track the remote branch
+
+6. Checking the Repository
+After completion, check your repository on the GitHub site. It should be successfully updated with the files you added.
